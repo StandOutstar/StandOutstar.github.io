@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://StandOutstar.github.io</id>
     <title>StandOutstar</title>
-    <updated>2019-07-08T12:29:32.894Z</updated>
+    <updated>2019-07-08T13:23:48.212Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://StandOutstar.github.io"/>
     <link rel="self" href="https://StandOutstar.github.io/atom.xml"/>
@@ -10,6 +10,73 @@
     <logo>https://StandOutstar.github.io/images/avatar.png</logo>
     <icon>https://StandOutstar.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, StandOutstar</rights>
+    <entry>
+        <title type="html"><![CDATA[接口测试之-测试流程]]></title>
+        <id>https://StandOutstar.github.io/post/jie-kou-ce-shi-zhi-ce-shi-liu-cheng</id>
+        <link href="https://StandOutstar.github.io/post/jie-kou-ce-shi-zhi-ce-shi-liu-cheng">
+        </link>
+        <updated>2019-07-08T12:49:59.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>
+<p>需求讨论</p>
+</li>
+<li>
+<p>需求评审</p>
+</li>
+<li>
+<p>场景设计</p>
+</li>
+<li>
+<p>用例设计：</p>
+<ol start="0">
+<li>目的：
+<ul>
+<li>理清思路，避免漏测；</li>
+<li>提高测试效率，方便后续测试；</li>
+<li>跟进测试进度；</li>
+<li>结果有记录；</li>
+<li>测试标准化</li>
+</ul>
+</li>
+<li>功能用例设计: 获取接口文档</li>
+<li>逻辑用例设计: 是否依赖业务</li>
+<li>异常用例设计</li>
+</ol>
+<ul>
+<li>参数异常:
+<ul>
+<li>关键字参数：把语言关键字作为参数名，比如 echo</li>
+<li>参数多少：参数缺失，未知参数</li>
+</ul>
+</li>
+<li>数据异常：
+<ul>
+<li>关键字数据：把语言关键字作为参数值，比如 echo</li>
+<li>数据为空</li>
+<li>长度不一致</li>
+<li>错误数据</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>安全用例设计：
+<ul>
+<li>cookie</li>
+<li>header</li>
+<li>唯一识别码：比如设备识别码</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>数据准备</p>
+</li>
+<li>
+<p>执行</p>
+</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Goland Tips & Tricks]]></title>
         <id>https://StandOutstar.github.io/post/goland-tips-and-tricks</id>
