@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://StandOutstar.github.io</id>
     <title>StandOutstar</title>
-    <updated>2019-07-08T13:23:48.212Z</updated>
+    <updated>2019-07-11T09:25:09.700Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://StandOutstar.github.io"/>
     <link rel="self" href="https://StandOutstar.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://StandOutstar.github.io/images/avatar.png</logo>
     <icon>https://StandOutstar.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, StandOutstar</rights>
+    <entry>
+        <title type="html"><![CDATA[Mac 小技巧]]></title>
+        <id>https://StandOutstar.github.io/post/mac-xiao-ji-qiao</id>
+        <link href="https://StandOutstar.github.io/post/mac-xiao-ji-qiao">
+        </link>
+        <updated>2019-07-11T09:12:26.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>终端中使用命令控制剪贴板
+<ul>
+<li>终端命令输出到剪贴板: pbcopy</li>
+<li>从剪贴板输出到终端: pbpaste
+示例：</li>
+</ul>
+<pre><code class="language-shell">$ echo hello | pbcopy
+$ pbpaste
+hello // 此为输出内容
+</code></pre>
+</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[接口测试之-测试流程]]></title>
         <id>https://StandOutstar.github.io/post/jie-kou-ce-shi-zhi-ce-shi-liu-cheng</id>
