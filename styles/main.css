@@ -753,10 +753,10 @@ a {
 }
 
       .sidebar {
-        width: 20px;
+        width: 20%;
       }
       .main-container {
-        margin-left: 20px;
+        margin-left: 20%;
       }
     
       .post-item .right .feature-container {
