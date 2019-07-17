@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://StandOutstar.github.io</id>
     <title>StandOutstar</title>
-    <updated>2019-07-11T09:34:28.480Z</updated>
+    <updated>2019-07-17T02:16:16.157Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://StandOutstar.github.io"/>
     <link rel="self" href="https://StandOutstar.github.io/atom.xml"/>
@@ -20,7 +20,7 @@
 <li>终端中使用命令控制剪贴板
 <ul>
 <li>终端命令输出到剪贴板: pbcopy</li>
-<li>从剪贴板输出到终端: pbpaste
+<li>从剪贴板输出到终端: pbpaste<br>
 示例：</li>
 </ul>
 <pre><code class="language-shell">$ echo hello | pbcopy
