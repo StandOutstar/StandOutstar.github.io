@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://StandOutstar.github.io</id>
     <title>StandOutstar</title>
-    <updated>2019-07-22T07:00:05.575Z</updated>
+    <updated>2019-07-29T08:04:09.556Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://StandOutstar.github.io"/>
     <link rel="self" href="https://StandOutstar.github.io/atom.xml"/>
@@ -24,6 +24,30 @@ $ python -m http.server  //python3
 </code></pre>
 <h3 id="访问服务">访问服务</h3>
 <p>其他主机可以在同局域网下，访问 <code>&lt;该主机 IP&gt;:8000</code>，下载文件。端口当然可以修改，请进一步查阅使用。</p>
+<h2 id="多平台路径转换">多平台路径转换</h2>
+<p>Windows 上使用反斜杠<code>\</code>，Unix 上使用正斜杠<code>/</code><br>
+如何方便的实现路径跨平台？</p>
+<pre><code class="language-python">from pathlib import Path, 
+file_dir = Path(&quot;some_dir/file_dir/&quot;)
+filepath = file_dir / &quot;file_name.ext&quot;
+
+print(filepath)
+# output:
+# windows: some_dir\file_dir\file_name.ext
+# unix: some_dir/file_dir/file_name.ext
+
+print(filepath.name)
+# output: file_name.txt
+
+print(filepath.suffix)
+# output: txt
+
+print(filepath.stm)
+# output: file_name
+
+print(filepath.exists())
+# output: True or False
+</code></pre>
 ]]></content>
     </entry>
     <entry>

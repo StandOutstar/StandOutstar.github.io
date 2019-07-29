@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://StandOutstar.github.io/favicon.ico?v=1563778762278">
+<link rel="shortcut icon" href="https://StandOutstar.github.io/favicon.ico?v=1564387445098">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://StandOutstar.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://StandOutstar.github.io">
-        <img src="https://StandOutstar.github.io/images/avatar.png?v=1563778762278" class="site-logo">
+        <img src="https://StandOutstar.github.io/images/avatar.png?v=1564387445098" class="site-logo">
         <h1 class="site-title">StandOutstar</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -108,6 +108,30 @@ $ python -m http.server  //python3
 </code></pre>
 <h3 id="访问服务">访问服务</h3>
 <p>其他主机可以在同局域网下，访问 <code>&lt;该主机 IP&gt;:8000</code>，下载文件。端口当然可以修改，请进一步查阅使用。</p>
+<h2 id="多平台路径转换">多平台路径转换</h2>
+<p>Windows 上使用反斜杠<code>\</code>，Unix 上使用正斜杠<code>/</code><br>
+如何方便的实现路径跨平台？</p>
+<pre><code class="language-python">from pathlib import Path, 
+file_dir = Path(&quot;some_dir/file_dir/&quot;)
+filepath = file_dir / &quot;file_name.ext&quot;
+
+print(filepath)
+# output:
+# windows: some_dir\file_dir\file_name.ext
+# unix: some_dir/file_dir/file_name.ext
+
+print(filepath.name)
+# output: file_name.txt
+
+print(filepath.suffix)
+# output: txt
+
+print(filepath.stm)
+# output: file_name
+
+print(filepath.exists())
+# output: True or False
+</code></pre>
 
             </div>
             
