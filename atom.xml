@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://StandOutstar.github.io</id>
     <title>StandOutstar</title>
-    <updated>2019-07-29T08:04:09.556Z</updated>
+    <updated>2019-08-21T10:37:35.256Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://StandOutstar.github.io"/>
     <link rel="self" href="https://StandOutstar.github.io/atom.xml"/>
@@ -10,6 +10,125 @@
     <logo>https://StandOutstar.github.io/images/avatar.png</logo>
     <icon>https://StandOutstar.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, StandOutstar</rights>
+    <entry>
+        <title type="html"><![CDATA[Golang-外部调用]]></title>
+        <id>https://StandOutstar.github.io/post/golang-wai-bu-diao-yong</id>
+        <link href="https://StandOutstar.github.io/post/golang-wai-bu-diao-yong">
+        </link>
+        <updated>2019-08-21T02:29:32.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="调用外部命令">调用外部命令</h1>
+<!-- toc -->
+<ul>
+<li><a href="#%E7%94%9F%E6%88%90%E5%91%BD%E4%BB%A4">生成命令</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA%E7%9B%AE%E6%A0%87">设置命令输出目标</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4">运行命令</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E5%B9%B6%E8%8E%B7%E5%BE%97%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA">运行并获得命令输出</a></li>
+<li><a href="#%E7%AE%A1%E9%81%93%E8%BF%9E%E6%8E%A5">管道连接</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E5%91%BD%E4%BB%A4%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置命令环境变量</a></li>
+<li><a href="#%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4%E8%B7%AF%E5%BE%84">查找命令路径</a></li>
+</ul>
+<!-- tocstop -->
+<h2 id="生成命令">生成命令</h2>
+<ul>
+<li><code>cmd := exec.Command(&quot;Program&quot;, &quot;arg1&quot;, &quot;arg2&quot;, ...)</code></li>
+<li><code>cmd := exec.CommandContext(context, &quot;Program&quot;, &quot;arg1&quot;, &quot;arg2&quot;, ...)</code>，可以设置 context</li>
+</ul>
+<h2 id="设置命令输出目标">设置命令输出目标</h2>
+<ul>
+<li>设置命令标准输出</li>
+</ul>
+<pre><code>cmd.Stdout = os.Stdout
+</code></pre>
+<ul>
+<li>设置命令标准错误输出</li>
+</ul>
+<pre><code>cmd.Stderr = os.Stderr 
+</code></pre>
+<h2 id="运行命令">运行命令</h2>
+<ul>
+<li>同步方式：</li>
+</ul>
+<pre><code>cmd.Run() 
+</code></pre>
+<ul>
+<li>异步方式</li>
+</ul>
+<pre><code>cmd.Start() 
+cmd.Wait() // 等待命令执行完成，并关闭自生成管道 
+</code></pre>
+<h2 id="运行并获得命令输出">运行并获得命令输出</h2>
+<ul>
+<li><code>cmd.Output()</code>， 只有stdout输出</li>
+<li><code>cmd.CombinedOutput()</code>，stdout 和 stderr 输出</li>
+</ul>
+<h2 id="管道连接">管道连接</h2>
+<ul>
+<li>自定义管道</li>
+</ul>
+<pre><code>r, w := io.Pipe() // 自定义管道
+cmd1.Stdout = w
+cmd2.Stdin = r 
+</code></pre>
+<ul>
+<li>cmd 生成管道</li>
+</ul>
+<pre><code>cmd1Out, _ := cmd1.StdoutPipe() 
+cmd2.Stdin = cmd1Out 
+
+// or 
+cmd2In, _ := cmd2.StdinPipe() 
+cmd1.Stdout = cmd2In
+</code></pre>
+<h2 id="设置命令环境变量">设置命令环境变量</h2>
+<pre><code>cmd.Env = newEnv
+</code></pre>
+<h2 id="查找命令路径">查找命令路径</h2>
+<pre><code>path, err := exec.LookPath(&quot;ls&quot;)
+if err != nil {
+    fmt.Printf(&quot;didn't find 'ls' executable\\n&quot;)
+} else {
+    fmt.Printf(&quot;'ls' executable is in '%s'\\n&quot;, path)
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[趣味学习]]></title>
+        <id>https://StandOutstar.github.io/post/jian-dan-yi-xue-de-jiao-cai</id>
+        <link href="https://StandOutstar.github.io/post/jian-dan-yi-xue-de-jiao-cai">
+        </link>
+        <updated>2019-08-20T10:25:12.000Z</updated>
+        <content type="html"><![CDATA[<p>视频：</p>
+<ul>
+<li>3Blue1Brown: bilibili or YouTube</li>
+</ul>
+<p>CheatSheet:</p>
+<ul>
+<li>https://www.cheatography.com/language/zh/</li>
+</ul>
+<p>游戏化学习网站：</p>
+<ul>
+<li>Git： https://learngitbranching.js.org/</li>
+<li>Python：https://py.checkio.org/</li>
+</ul>
+<p>可视化学习网站：</p>
+<ul>
+<li>Math: https://mathigon.org</li>
+<li>Algorithm: https://github.com/algorithm-visualizer/algorithm-visualizer</li>
+</ul>
+<p>在线编程学习：</p>
+<ul>
+<li>https://www.freecodecamp.cn/challenges/say-hello-to-html-element</li>
+</ul>
+<p>英语学习</p>
+<ul>
+<li>Drops App</li>
+<li>多邻国</li>
+<li>quizlet App &amp; Website:https://quizlet.com/latest</li>
+<li>人人词典-简单课</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python Tricks]]></title>
         <id>https://StandOutstar.github.io/post/python-tricks</id>
@@ -172,17 +291,6 @@ $ pbpaste
 <li>容器方式运行数据库</li>
 <li>快速生成函数测试代码 generate</li>
 <li>重构 change signature</li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Golang 源码阅读]]></title>
-        <id>https://StandOutstar.github.io/post/golang-yuan-ma-yue-du</id>
-        <link href="https://StandOutstar.github.io/post/golang-yuan-ma-yue-du">
-        </link>
-        <updated>2019-06-21T01:16:28.000Z</updated>
-        <content type="html"><![CDATA[<ol>
-<li>https://github.com/zgoat/zlog</li>
 </ol>
 ]]></content>
     </entry>
